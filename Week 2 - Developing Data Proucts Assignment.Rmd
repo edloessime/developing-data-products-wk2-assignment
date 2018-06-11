@@ -1,0 +1,29 @@
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(leaflet)
+```
+
+```{r, echo=FALSE}
+my_map <- leaflet() %>% 
+  addTiles()
+```
+
+## June 10, 2018
+
+```{r, echo=FALSE}
+edIcon <- makeIcon(
+  iconUrl = "https://pbs.twimg.com/profile_images/839205984044122112/WwGtBrNs_400x400.jpg",
+  iconWidth = 31*215/230, iconHeight = 31,
+  iconAnchorX = 31*215/230/2, iconAnchorY = 16
+)
+
+my_map <- my_map %>%
+  addMarkers(lat=44.2170282, lng=-70.6296503, 
+             popup="Ed's Mountaintop Lair", icon = edIcon)
+
+my_map
+```
+
+
+
